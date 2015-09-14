@@ -1,25 +1,24 @@
-'use strict';
-var test = require('ava');
-var childProcess = require('child_process');
+import childProcess from 'child_process';
+import test from 'ava';
 
-test('main', function (t) {
+test('main', t => {
 	t.plan(2);
 
 	childProcess.execFile('./cli.js', ['fixture.js'], {
 		cwd: __dirname
-	}, function (err, stdout) {
-		t.error(err);
+	}, (err, stdout) => {
+		t.ifError(err);
 		t.is(stdout, '  ');
 	});
 });
 
-test('stdin', function (t) {
+test('stdin', t => {
 	t.plan(2);
 
 	childProcess.exec('cat fixture.js | ./cli.js', {
 		cwd: __dirname
-	}, function (err, stdout) {
-		t.error(err);
+	}, (err, stdout) => {
+		t.ifError(err);
 		t.is(stdout, '  ');
 	});
 });

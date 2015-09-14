@@ -33,10 +33,7 @@ var input = cli.input[0];
 if (!input && process.stdin.isTTY) {
 	console.error('Expected a filepath');
 	process.exit(1);
-	return;
-}
-
-if (input) {
+} else if (input) {
 	init(fs.readFileSync(input, 'utf8'));
 } else {
 	stdin().then(init);
