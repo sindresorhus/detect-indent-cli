@@ -28,6 +28,7 @@ $ detect-indent --help
 ## Related
 
 - [detect-indent](https://github.com/sindresorhus/detect-indent) - API for this module
+- [detect-newline-cli](https://github.com/sindresorhus/detect-newline-cli) - Detect the dominant newline character
 
 
 ## License
