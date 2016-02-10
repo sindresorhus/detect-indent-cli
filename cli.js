@@ -1,37 +1,35 @@
 #!/usr/bin/env node
 'use strict';
-var fs = require('fs');
-var meow = require('meow');
-var stdin = require('get-stdin');
-var detectIndent = require('detect-indent');
+const fs = require('fs');
+const meow = require('meow');
+const stdin = require('get-stdin');
+const detectIndent = require('detect-indent');
 
-var cli = meow({
-	help: [
-		'  Usage',
-		'    $ detect-indent <file>',
-		'    echo <string> | detect-indent',
-		'',
-		'  Example',
-		'    $ echo \'  foo\\n  bar\' | detect-indent | wc --chars',
-		'    2'
-	]
-});
+const cli = meow(`
+	Usage
+	  $ detect-indent <file>
+	  echo <string> | detect-indent
+
+	Example
+	  $ echo '  foo\\n  bar' | detect-indent | wc --chars
+	  2
+`);
 
 function init(data) {
-	var indent = detectIndent(data).indent;
+	const indent = detectIndent(data).indent;
 
-	if (indent !== null) {
-		process.stdout.write(indent);
-	} else {
+	if (indent === null) {
 		console.error('Indentation could not be detected');
 		process.exit(2);
+	} else {
+		process.stdout.write(indent);
 	}
 }
 
-var input = cli.input[0];
+const input = cli.input[0];
 
 if (!input && process.stdin.isTTY) {
-	console.error('Expected a filepath');
+	console.error('Specify a filepath');
 	process.exit(1);
 } else if (input) {
 	init(fs.readFileSync(input, 'utf8'));

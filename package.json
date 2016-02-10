@@ -38,8 +38,8 @@
   ],
   "dependencies": {
     "detect-indent": "^4.0.0",
-    "get-stdin": "^5.0.0",
-    "meow": "^3.3.0"
+    "get-stdin": "^5.0.1",
+    "meow": "^3.7.0"
   },
   "devDependencies": {
     "ava": "*",
