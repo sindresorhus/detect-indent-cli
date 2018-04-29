@@ -15,13 +15,13 @@ $ npm install --global detect-indent-cli
 ```
 $ detect-indent --help
 
-    Usage
-      $ detect-indent <file>
-      echo <string> | detect-indent
+  Usage
+    $ detect-indent <file>
+    echo <string> | detect-indent
 
-    Example
-      $ echo '  foo\n  bar' | detect-indent | wc --chars
-      2
+  Example
+    $ echo '  foo\n  bar' | detect-indent | wc --chars
+    2
 ```
 
 
@@ -33,4 +33,4 @@ $ detect-indent --help
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

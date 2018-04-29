@@ -16,7 +16,7 @@ const cli = meow(`
 `);
 
 function init(data) {
-	const indent = detectIndent(data).indent;
+	const {indent} = detectIndent(data);
 
 	if (indent === null) {
 		console.error('Indentation could not be detected');
@@ -26,7 +26,7 @@ function init(data) {
 	}
 }
 
-const input = cli.input[0];
+const [input] = cli.input;
 
 if (!input && process.stdin.isTTY) {
 	console.error('Specify a filepath');
@@ -34,5 +34,7 @@ if (!input && process.stdin.isTTY) {
 } else if (input) {
 	init(fs.readFileSync(input, 'utf8'));
 } else {
-	stdin().then(init);
+	(async () => {
+		init(await stdin());
+	})();
 }
