@@ -1,4 +1,4 @@
-# detect-indent-cli [![Build Status](https://travis-ci.org/sindresorhus/detect-indent-cli.svg?branch=master)](https://travis-ci.org/sindresorhus/detect-indent-cli)
+# detect-indent-cli
 
 > Detect the indentation of code
 
