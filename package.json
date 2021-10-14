@@ -4,16 +4,18 @@
 	"description": "Detect the indentation of code",
 	"license": "MIT",
 	"repository": "sindresorhus/detect-indent-cli",
+	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
 	"bin": {
-		"detect-indent": "cli.js"
+		"detect-indent": "./cli.js"
 	},
 	"engines": {
-		"node": ">=8"
+		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -37,13 +39,13 @@
 		"tab"
 	],
 	"dependencies": {
-		"detect-indent": "^5.0.0",
-		"get-stdin": "^6.0.0",
-		"meow": "^5.0.0"
+		"detect-indent": "^7.0.0",
+		"get-stdin": "^9.0.0",
+		"meow": "^10.1.1"
 	},
 	"devDependencies": {
-		"ava": "*",
-		"execa": "^0.10.0",
-		"xo": "*"
+		"ava": "^3.15.0",
+		"execa": "^5.1.1",
+		"xo": "^0.45.0"
 	}
 }

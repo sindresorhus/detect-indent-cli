@@ -2,13 +2,11 @@
 
 > Detect the indentation of code
 
-
 ## Install
 
+```sh
+npm install --global detect-indent-cli
 ```
-$ npm install --global detect-indent-cli
-```
-
 
 ## Usage
 
@@ -24,13 +22,7 @@ $ detect-indent --help
     2
 ```
 
-
 ## Related
 
 - [detect-indent](https://github.com/sindresorhus/detect-indent) - API for this module
 - [detect-newline-cli](https://github.com/sindresorhus/detect-newline-cli) - Detect the dominant newline character
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
