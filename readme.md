@@ -17,12 +17,19 @@ $ detect-indent --help
     $ detect-indent <file>
     echo <string> | detect-indent
 
+  Options
+    --verbose  Show indent type and amount
+
   Example
     $ echo '  foo\n  bar' | detect-indent | wc --chars
     2
+
+    $ echo '  foo\n  bar' | detect-indent --verbose
+    Type: space
+    Amount: 2
 ```
 
 ## Related
 
-- [detect-indent](https://github.com/sindresorhus/detect-indent) - API for this module
+- [detect-indent](https://github.com/sindresorhus/detect-indent) - API for this package
 - [detect-newline-cli](https://github.com/sindresorhus/detect-newline-cli) - Detect the dominant newline character

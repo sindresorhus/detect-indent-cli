@@ -10,19 +10,34 @@ const cli = meow(`
 	  $ detect-indent <file>
 	  echo <string> | detect-indent
 
+	Options
+	  --verbose  Show indent type and amount
+
 	Example
 	  $ echo '  foo\\n  bar' | detect-indent | wc --chars
 	  2
+
+	  $ echo '  foo\\n  bar' | detect-indent --verbose
+	  Type: space
+	  Amount: 2
 `, {
 	importMeta: import.meta,
+	flags: {
+		verbose: {
+			type: 'boolean',
+		},
+	},
 });
 
 function init(data) {
-	const {indent} = detectIndent(data);
+	const {indent, type, amount} = detectIndent(data);
 
 	if (indent === undefined) {
 		console.error('Indentation could not be detected');
 		process.exitCode = 2;
+	} else if (cli.flags.verbose) {
+		console.log(`Type: ${type || 'unknown'}`);
+		console.log(`Amount: ${amount}`);
 	} else {
 		process.stdout.write(indent);
 	}
